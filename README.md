@@ -1,9 +1,28 @@
 # RepeaterAnnouncements
  
-Usage: Announcements.py <sound_file> <seconds> <device_index>
+Overview:
+Add a repeater announcement engine if your controller does not have one. This script runs on a linux computer (Le Potato/Rasberry Pi) and we use it with a seperate radio $20 low power Boefeng using VOX, but cen be wired in to the repeater with some extra configuration. 
+
+Example Schedule via Cron:
+```
+#Welcome - between 6am and 8pm every two hours
+0 6-20/2 * * * /root/Announcements.py /root/WelcomeMessage.wav 30 0
+
+#Net Invite - every day 3:15pm
+15 15 * * * /root/Announcements.py /root/Net\ Invite.wav 30 0
+
+#Net Tonight - Wednesday at 3pm
+0 15 * * 3 /root/Announcements.py /root/NetTonight.wav 20 0
+```
+
+Use any of the AI text to speach to create a realistic voice for your message. 
 
 
+Usage: 
+Announcements.py <sound_file> <seconds> <device_index>
 
+Example useage and log output:
+```
 ./Announcements.py Testing\ AD5QA.m4a 10 0
 2024-07-24 11:58:43 Announcements.py Testing AD5QA.m4a 10 0 threshold=50
         -> [003s / 003s] - Avg RMS: [002/50] BELOW
@@ -24,4 +43,4 @@ Usage: Announcements.py <sound_file> <seconds> <device_index>
         -> [010s / 018s] - Avg RMS: [003/50] BELOW
         -> [011s / 019s] - Avg RMS: [003/50] BELOW
 Elapsed Time: 11.1s | Total Time: 19.9s - Condition met. Playing sound...
-
+```
