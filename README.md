@@ -17,6 +17,7 @@ Example Schedule via Cron:
 
 Use any of the AI text to speach to create a realistic voice for your message. 
 
+The script has a threshold value you can set for receive busy this is used to reset the counter. When executed it will count to the specified seconds to wait/listen. If the receive threshold is met then it will reset the timer. When the timer hits the wait time the message will play. If the repeater is busy for the max_wait default to 300 seconds or 5 min then this run will terminate.  
 
 Usage: 
 Announcements.py <sound_file> <seconds> <device_index>
