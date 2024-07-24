@@ -3,6 +3,8 @@
 Overview:
 Add a repeater announcement engine if your controller does not have one. This script runs on a linux computer (Le Potato/Rasberry Pi) and we use it with a seperate radio $20 low power Boefeng using VOX, but cen be wired in to the repeater with some extra configuration. 
 
+NOTE: You can't use cron in some setups that require python vitural environment.
+
 Example Schedule via Cron:
 ```
 #Welcome - between 6am and 8pm every two hours
